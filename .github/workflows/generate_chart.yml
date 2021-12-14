@@ -16,3 +16,8 @@ jobs:
         with:
           name: assets-for-download
           path: results
+      - name: Push chart to repo to be used as assets
+        run: |
+          git add results/chart.png
+          git commit -m "[skip ci] testpush"
+          git push 
