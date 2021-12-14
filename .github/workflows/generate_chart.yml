@@ -11,12 +11,8 @@ jobs:
         uses: matlab-actions/run-command@v1
         with:
           command: project
-      - name: Create output folder and move chart into results
-        run: |
-          mkdir results
-          mv chart.png /results
-      - name: Save Chart as artificact using upload artifact action
+      - name: Save output Chart as artificact using upload artifact action
         uses:  actions/upload-artifact@v2
         with:
-          name: assets for download
+          name: assets-for-download
           path: results
