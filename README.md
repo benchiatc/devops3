@@ -27,9 +27,12 @@ This pipeline is illustrated as a flow chart below.
 
 ## Step by Step visualization
 ### 0. Start the self-hosted runner
-Runner starts listening to for jobs. 
+Runner starts listening to for jobs.
+
 ![image](https://github.com/benchiatc/devops3/blob/main/assets/img/0.PNG?raw=true)
+
 Github Pages shows old chart based on old asset
+
 ![image](https://github.com/benchiatc/devops3/blob/main/assets/img/6.PNG?raw=true)
 ### 1. A commit is made and pushed
 ![image](https://github.com/benchiatc/devops3/blob/main/assets/img/1.PNG?raw=true)
