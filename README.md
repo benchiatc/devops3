@@ -33,3 +33,19 @@ D -- Yes --> F(Save output chart from script as artifact)
 F --> G(Push output chart to repository but skip CI)
 G --> H(Github Pages updates according to new assets)
 ```
+
+## Step by Step visualization
+### 0. Start the self-hosted runner
+Runner starts listening to for jobs. 
+Github Pages shows old chart based on old asset
+### 1. A commit is made and pushed
+
+### 2.Github Action triggers, self-hosted runner runs the MATLAB command
+### 3. MATLAB starts up on local self-hosted machine and trains the Neural Network Model
+
+### 4. Upon run success, MATLAB closes and stores the output chart as an artifact, and also in the assets of the local repository
+
+### 5. Git push the output chart in the local repository to GitHub repo, but skip CI
+
+### 6. Github Pages updates image with news assets based on the new computed chart
+Chart now shows the latest and improved prediction chart
