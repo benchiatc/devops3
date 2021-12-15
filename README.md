@@ -49,3 +49,8 @@ Github Pages shows old chart based on old asset
 ### 6. Github Pages updates image with news assets based on the new computed chart
 ![image](https://github.com/benchiatc/devops3/blob/main/assets/img/5.PNG?raw=true)
 Chart now shows the latest and improved prediction chart
+
+# Future improvements 
+- Create a docker for a virtual environment to train the neural net in a virtual environment rather than a self-hosted runner
+- Send an email/text to notify when the training is complete to notify the owner that the page is live with the updated information OR 
+- Send an email/text to notify when the training failed to complete and to fix the error 
