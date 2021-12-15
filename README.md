@@ -28,15 +28,21 @@ This pipeline is illustrated as a flow chart below.
 ## Step by Step visualization
 ### 0. Start the self-hosted runner
 Runner starts listening to for jobs. 
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/0.PNG?raw=true)
 Github Pages shows old chart based on old asset
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/6.PNG?raw=true)
 ### 1. A commit is made and pushed
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/1.PNG?raw=true)
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/2.PNG?raw=true)
 ### 2.Github Action triggers, self-hosted runner runs the MATLAB command
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/3.PNG?raw=true)
 ### 3. MATLAB starts up on local self-hosted machine and trains the Neural Network Model
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/4.PNG?raw=true)
 ### 4. Upon run success, MATLAB closes and stores the output chart as an artifact, and also in the assets of the local repository
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/7.PNG?raw=true)
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/8.PNG?raw=true)
 ### 5. Git push the output chart in the local repository to GitHub repo, but skip CI
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/9.PNG?raw=true)
 ### 6. Github Pages updates image with news assets based on the new computed chart
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/5.PNG?raw=true)
 Chart now shows the latest and improved prediction chart
