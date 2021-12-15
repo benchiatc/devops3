@@ -15,7 +15,32 @@ CI/CD pipeline implemented using GitHub Actions:
 ```
 $./run.cmd
 ```
-
+-   The Github actions can be implemented using the follow yml script below
+```
+name: Run MATLAB Commands on Self-Hosted Runner
+on: [push]
+jobs:
+  my-job:
+    name: Run MATLAB Commands
+    runs-on: self-hosted
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Run commands
+        uses: matlab-actions/run-command@v1
+        with:
+          command: project
+      - name: Save output Chart as artificact using upload artifact action
+        uses:  actions/upload-artifact@v2
+        with:
+          name: assets-for-download
+          path: results
+      - name: Push chart to repo to be used as assets
+        run: |
+          git add results/chart.png
+          git commit -m "[skip ci] testpush"
+          git push 
+```
 -   Run MATLAB Command to trigger MATLAB Script
 -   Save output chart from script as an artifact (can be used for troubleshooting or passed to another script as an argument)
 - Pushes output chart to Github Repo which is connected to the [Github Pages](https://benchiatc.github.io/devops3/), but skip CI. This is to prevent and infinite CI loops
