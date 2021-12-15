@@ -23,29 +23,26 @@ $./run.cmd
 This pipeline is illustrated as a flow chart below.  
 
 ### CI/CD Flow diagram
-```mermaid
-graph 
-A(Commit & Push) -- Github Action triggers  YML workflow--> B(Set up job to run MATLAB on self-hosted runner)
-B --> C(Run command on MATLAB)
-C --> D{Run success?} 
-D -- No --> E(Stop Workflow)
-D -- Yes --> F(Save output chart from script as artifact)
-F --> G(Push output chart to repository but skip CI)
-G --> H(Github Pages updates according to new assets)
-```
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbkEoQ29tbWl0ICYgUHVzaCkgLS0gR2l0aHViIEFjdGlvbiB0cmlnZ2VycyAgWU1MIHdvcmtmbG93LS0-IEIoU2V0IHVwIGpvYiB0byBydW4gTUFUTEFCIG9uIHNlbGYtaG9zdGVkIHJ1bm5lcilcbkIgLS0-IEMoUnVuIGNvbW1hbmQgb24gTUFUTEFCKVxuQyAtLT4gRHtSdW4gc3VjY2Vzcz99IFxuRCAtLSBObyAtLT4gRShTdG9wIFdvcmtmbG93KVxuRCAtLSBZZXMgLS0-IEYoU2F2ZSBvdXRwdXQgY2hhcnQgZnJvbSBzY3JpcHQgYXMgYXJ0aWZhY3QpXG5GIC0tPiBHKFB1c2ggb3V0cHV0IGNoYXJ0IHRvIHJlcG9zaXRvcnkgYnV0IHNraXAgQ0kpXG5HIC0tPiBIKEdpdGh1YiBQYWdlcyB1cGRhdGVzIGFjY29yZGluZyB0byBuZXcgYXNzZXRzKSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0)](https://mermaid-js.github.io/mermaid-live-editor/edit#eyJjb2RlIjoiZ3JhcGggVERcbkEoQ29tbWl0ICYgUHVzaCkgLS0gR2l0aHViIEFjdGlvbiB0cmlnZ2VycyAgWU1MIHdvcmtmbG93LS0-IEIoU2V0IHVwIGpvYiB0byBydW4gTUFUTEFCIG9uIHNlbGYtaG9zdGVkIHJ1bm5lcilcbkIgLS0-IEMoUnVuIGNvbW1hbmQgb24gTUFUTEFCKVxuQyAtLT4gRHtSdW4gc3VjY2Vzcz99IFxuRCAtLSBObyAtLT4gRShTdG9wIFdvcmtmbG93KVxuRCAtLSBZZXMgLS0-IEYoU2F2ZSBvdXRwdXQgY2hhcnQgZnJvbSBzY3JpcHQgYXMgYXJ0aWZhY3QpXG5GIC0tPiBHKFB1c2ggb3V0cHV0IGNoYXJ0IHRvIHJlcG9zaXRvcnkgYnV0IHNraXAgQ0kpXG5HIC0tPiBIKEdpdGh1YiBQYWdlcyB1cGRhdGVzIGFjY29yZGluZyB0byBuZXcgYXNzZXRzKSIsIm1lcm1haWQiOiJ7XG4gIFwidGhlbWVcIjogXCJkZWZhdWx0XCJcbn0iLCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
 
 ## Step by Step visualization
 ### 0. Start the self-hosted runner
 Runner starts listening to for jobs. 
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/0.PNG?raw=true)
 Github Pages shows old chart based on old asset
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/6.PNG?raw=true)
 ### 1. A commit is made and pushed
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/1.PNG?raw=true)
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/2.PNG?raw=true)
 ### 2.Github Action triggers, self-hosted runner runs the MATLAB command
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/3.PNG?raw=true)
 ### 3. MATLAB starts up on local self-hosted machine and trains the Neural Network Model
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/4.PNG?raw=true)
 ### 4. Upon run success, MATLAB closes and stores the output chart as an artifact, and also in the assets of the local repository
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/7.PNG?raw=true)
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/8.PNG?raw=true)
 ### 5. Git push the output chart in the local repository to GitHub repo, but skip CI
-
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/9.PNG?raw=true)
 ### 6. Github Pages updates image with news assets based on the new computed chart
+![image](https://github.com/benchiatc/devops3/blob/main/assets/img/5.PNG?raw=true)
 Chart now shows the latest and improved prediction chart
