@@ -23,16 +23,7 @@ $./run.cmd
 This pipeline is illustrated as a flow chart below.  
 
 ### CI/CD Flow diagram
-```mermaid
-graph 
-A(Commit & Push) -- Github Action triggers  YML workflow--> B(Set up job to run MATLAB on self-hosted runner)
-B --> C(Run command on MATLAB)
-C --> D{Run success?} 
-D -- No --> E(Stop Workflow)
-D -- Yes --> F(Save output chart from script as artifact)
-F --> G(Push output chart to repository but skip CI)
-G --> H(Github Pages updates according to new assets)
-```
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbkEoQ29tbWl0ICYgUHVzaCkgLS0gR2l0aHViIEFjdGlvbiB0cmlnZ2VycyAgWU1MIHdvcmtmbG93LS0-IEIoU2V0IHVwIGpvYiB0byBydW4gTUFUTEFCIG9uIHNlbGYtaG9zdGVkIHJ1bm5lcilcbkIgLS0-IEMoUnVuIGNvbW1hbmQgb24gTUFUTEFCKVxuQyAtLT4gRHtSdW4gc3VjY2Vzcz99IFxuRCAtLSBObyAtLT4gRShTdG9wIFdvcmtmbG93KVxuRCAtLSBZZXMgLS0-IEYoU2F2ZSBvdXRwdXQgY2hhcnQgZnJvbSBzY3JpcHQgYXMgYXJ0aWZhY3QpXG5GIC0tPiBHKFB1c2ggb3V0cHV0IGNoYXJ0IHRvIHJlcG9zaXRvcnkgYnV0IHNraXAgQ0kpXG5HIC0tPiBIKEdpdGh1YiBQYWdlcyB1cGRhdGVzIGFjY29yZGluZyB0byBuZXcgYXNzZXRzKSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0)](https://mermaid-js.github.io/mermaid-live-editor/edit#eyJjb2RlIjoiZ3JhcGggVERcbkEoQ29tbWl0ICYgUHVzaCkgLS0gR2l0aHViIEFjdGlvbiB0cmlnZ2VycyAgWU1MIHdvcmtmbG93LS0-IEIoU2V0IHVwIGpvYiB0byBydW4gTUFUTEFCIG9uIHNlbGYtaG9zdGVkIHJ1bm5lcilcbkIgLS0-IEMoUnVuIGNvbW1hbmQgb24gTUFUTEFCKVxuQyAtLT4gRHtSdW4gc3VjY2Vzcz99IFxuRCAtLSBObyAtLT4gRShTdG9wIFdvcmtmbG93KVxuRCAtLSBZZXMgLS0-IEYoU2F2ZSBvdXRwdXQgY2hhcnQgZnJvbSBzY3JpcHQgYXMgYXJ0aWZhY3QpXG5GIC0tPiBHKFB1c2ggb3V0cHV0IGNoYXJ0IHRvIHJlcG9zaXRvcnkgYnV0IHNraXAgQ0kpXG5HIC0tPiBIKEdpdGh1YiBQYWdlcyB1cGRhdGVzIGFjY29yZGluZyB0byBuZXcgYXNzZXRzKSIsIm1lcm1haWQiOiJ7XG4gIFwidGhlbWVcIjogXCJkZWZhdWx0XCJcbn0iLCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
 
 ## Step by Step visualization
 ### 0. Start the self-hosted runner
