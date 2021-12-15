@@ -83,7 +83,7 @@ plot(YTest)
 hold on
 plot(YPred,'.-')
 hold off
-legend(["Observed" "Predicted"],'Location','southeast')
+legend(["Observed" "Predicted"])
 ylabel("Stock Price($)")
 title("Prediction")
 
